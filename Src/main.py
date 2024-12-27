@@ -1,23 +1,11 @@
-from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
+from Grayscale import grayscale_image
+from Shear_Mirror import *
 
-grayscale = ([0.33, 0.33, 0.33], [0.33, 0.33, 0.33], [0.33, 0.33, 0.33])
-grayscale_matrix = np.asarray(grayscale)
-#test = [65, 90, 20]
-#test_vector = np.asarray(test)
+if __name__ == '__main__':
+    file = input("Enter file name: ")
+    image = shear_image(file, 0, 0.5)
+    image.save('./test.png')
 
-#print(np.dot(grayscale_matrix, test_vector).round())
-
-img = np.array(Image.open('./cat.png'))
-img.setflags(write=True)
-
-for i in range(img.shape [1]):
-    for j in range(img.shape [0]):
-        img[j, i] = np.dot(grayscale_matrix, img[j, i]).round()
-
-#print(img)
-#plt.imshow(img)
-#plt.show()
-img_grayscale = Image.fromarray(img)
-img_grayscale.save('./cat_grayscale.png')
+    image_2 = mirror_image('test')
+    plt.imshow(np.array(image_2))
+    plt.show()
