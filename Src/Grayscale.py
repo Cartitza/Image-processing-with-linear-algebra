@@ -10,7 +10,7 @@ def grayscale_image(file: str):
     #test_vector = np.asarray(test)
     #file = input()
     #print(np.dot(grayscale_matrix, test_vector).round())
-    image = Image.open('./' + file + '.png')
+    image = Image.open('./Images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)
@@ -24,5 +24,5 @@ def grayscale_image(file: str):
     #plt.show()
     img_grayscale = Image.fromarray(img)
     img_grayscale = img_grayscale.convert('L')
-    img_grayscale.save('./' + file + '_grayscale.png')
+    img_grayscale.save('./Images/' + file + '_grayscale.png')
     return img_grayscale
