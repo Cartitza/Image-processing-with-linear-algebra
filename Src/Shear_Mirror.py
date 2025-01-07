@@ -36,7 +36,6 @@ def shear_image(file: str, up: float, left:float):
 #TODO
 #fa sa nu mai apara pixeli negri random
 #MAYBE turn it all into a class, idk
-#rotate function
 
 
 def mirror_image(file: str, axis: str):

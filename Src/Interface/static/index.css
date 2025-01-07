@@ -1,0 +1,6 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: red;
+    margin-top: 300px;
+}
