@@ -1,6 +1,55 @@
-h1 {
+.Title {
     display: flex;
+    flex-direction: row;
+    background-color: #fae5d3;
+    overflow: hidden;
+    height: 100px;
+}
+
+.Title h1 {
+    color: black;
+    padding-left: 10px;
+    align-self: center;
+}
+
+.Center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 503px;
+}
+
+.Center .Bar {
+    background-color: #fae5d3;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+
+.Bottom {
+    background-color: #fae5d3;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+.Image-submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    color: red;
-    margin-top: 300px;
+    padding-top: 150px;
+}
+
+.Image-submit button {
+    margin-top: 20px;
+}
+
+#image {
+    border: black 2px solid;
+}
+
+body {
+    margin: 0;
 }

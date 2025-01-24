@@ -4,8 +4,8 @@ from Rotation import *
 
 if __name__ == '__main__':
     file = input("Enter file name: ")
-    #image = shear_image(file, 0.5, 1) numbers for skull image
-    image = rotate_image(file, 120)
+    image = shear_image(file, 0.5, 1)
+    #image = rotate_image(file, 120)
     plt.imshow(np.array(image))
     plt.show()
 
