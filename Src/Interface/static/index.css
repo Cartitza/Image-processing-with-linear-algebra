@@ -25,6 +25,27 @@
     flex-direction: column;
     width: 300px;
     align-items: center;
+    text-align: center;
+}
+
+.Center .Bar form {
+    display: inline-block;
+}
+
+label {
+    padding-right: 10px;
+}
+
+#up {
+    margin-left: 20px;
+}
+
+#left {
+    margin-left: 12px;
+}
+
+#right {
+    margin-left: 4px;
 }
 
 .Bottom {
@@ -44,6 +65,20 @@
 
 .Image-submit button {
     margin-top: 20px;
+}
+
+.Sent-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.Sent-image img {
+    max-width: 500px;
+    max-height: 300px;
+    object-fit: contain;
 }
 
 #image {

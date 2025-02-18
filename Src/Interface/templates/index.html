@@ -11,13 +11,41 @@
     <div class="Center">
         <div class="Bar"></div>
         <form action="/" method="post" enctype="multipart/form-data">
-            <div class="Image-submit">
-                <h3>Choose your image</h3>
-                <input autofocus name="image" type="file" id="image" accept="image/png">
-                <button type="submit">Submit</button>
-            </div>
+            {% if not image %}
+                <div class="Image-submit">
+                    <h3>Choose your image</h3>
+                    <input autofocus name="image" type="file" id="image" accept="image/png" required>
+                    <button type="submit">Submit</button>
+                </div>
+            {% else %}
+                <div class="Sent-image">
+                    <img src= "./static/images/img.jpg">
+                </div>
+            {% endif %}
         </form>
-        <div class="Bar"></div>
+        <div class="Bar">
+            {% if image %}
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <h3>Shear</h3>
+                    <label for="up">Up:</label>
+                    <input name="shear_up" id="up" type="number" placeholder="0" min="0" max="3" step="0.05"><br>
+                    <label for="down">Down:</label>
+                    <input name="shear_down" id="down" type="number" placeholder="0" min="0" max="3" step="0.05"><br>
+                    <label for="left">Left:</label>
+                    <input name="shear_left" id="left" type="number" placeholder="0" min="0" max="3" step="0.05"><br>
+                    <label for="right">Right:</label>
+                    <input name="shear_right" id="right" type="number" placeholder="0" min="0" max="3" step="0.05">
+                    <h3>Mirror</h3>
+                    <input name="y_axis" id="Y" type="checkbox">
+                    <label for="Y">Y Axis</label>
+                    <input name="x_axis" id="X" type="checkbox">
+                    <label for="X">X Axis</label>
+                    <h3>Rotation</h3>
+                    <label for="degrees">Degrees (clockwise):</label>
+                    <input name="rotation_degrees" id="degrees" type="number" placeholder="0"><br>
+                </form>
+            {% endif %}
+        </div>
     </div>
     <div class="Bottom"></div>
 </body>
