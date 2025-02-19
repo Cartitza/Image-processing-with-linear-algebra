@@ -6,7 +6,7 @@ import os
 
 def shear_image(file: str, up: float, left:float):
 
-    image = Image.open('./Images/' + file + '.png')
+    image = Image.open('../Images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)
@@ -40,7 +40,7 @@ def shear_image(file: str, up: float, left:float):
 
 def mirror_image(file: str, axis: str):
 
-    image = Image.open('./Images/' + file + '.png')
+    image = Image.open('./static/images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)

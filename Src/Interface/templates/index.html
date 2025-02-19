@@ -9,7 +9,11 @@
         <h1>Azi e Joi</h1>
     </div>
     <div class="Center">
-        <div class="Bar"></div>
+        <div class="Bar">
+            {% if image %}
+                <a class="Download_button" href="{{url_for('download')}}" >Download Image</a>
+            {% endif %}
+        </div>
         <form action="/" method="post" enctype="multipart/form-data">
             {% if not image %}
                 <div class="Image-submit">
@@ -19,7 +23,7 @@
                 </div>
             {% else %}
                 <div class="Sent-image">
-                    <img src= "./static/images/img.jpg">
+                    <img src= "./static/images/img.png">
                 </div>
             {% endif %}
         </form>
@@ -43,6 +47,7 @@
                     <h3>Rotation</h3>
                     <label for="degrees">Degrees (clockwise):</label>
                     <input name="rotation_degrees" id="degrees" type="number" placeholder="0"><br>
+                    <button type="submit" id="Edit_button">Edit Image</button>
                 </form>
             {% endif %}
         </div>

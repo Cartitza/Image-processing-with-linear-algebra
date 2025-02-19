@@ -1,5 +1,4 @@
-from Grayscale import grayscale_image
-from Shear_Mirror import *
+from Src.Image_Editing.Shear_Mirror import *
 from Rotation import *
 
 if __name__ == '__main__':
