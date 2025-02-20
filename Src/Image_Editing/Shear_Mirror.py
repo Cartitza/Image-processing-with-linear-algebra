@@ -6,7 +6,7 @@ import os
 
 def shear_image(file: str, up: float, left:float):
 
-    image = Image.open('../Images/' + file + '.png')
+    image = Image.open('./static/images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)
@@ -71,37 +71,37 @@ def mirror_image(file: str, axis: str):
 
 def shear_image_right(file: str, right: float):
 
-    image = Image.open('./Images/' + file + '.png')
+    image = Image.open('./static/images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)
 
     temp = mirror_image(file, 'x')
-    temp.save('./' + file + '_temp.png')
+    temp.save('./static/images/' + file + '_temp.png')
 
     temp_2 = shear_image(file + '_temp', 0, right)
-    temp_2.save('./' + file + '_temp.png')
+    temp_2.save('./static/images/' + file + '_temp.png')
 
     sheared_image = mirror_image(file + '_temp', 'x')
 
-    os.remove('./' + file + '_temp.png')
+    os.remove('./static/images/' + file + '_temp.png')
     return sheared_image
 
 
 def shear_image_down(file: str, down: float):
 
-    image = Image.open('./Images/' + file + '.png')
+    image = Image.open('./static/images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
     img.setflags(write=True)
 
     temp = mirror_image(file, 'y')
-    temp.save('./' + file + '_temp.png')
+    temp.save('./static/images/' + file + '_temp.png')
 
     temp_2 = shear_image(file + '_temp', down, 0)
-    temp_2.save('./' + file + '_temp.png')
+    temp_2.save('./static/images/' + file + '_temp.png')
 
     sheared_image = mirror_image(file + '_temp', 'y')
 
-    os.remove('./' + file + '_temp.png')
+    os.remove('./static/images/' + file + '_temp.png')
     return sheared_image

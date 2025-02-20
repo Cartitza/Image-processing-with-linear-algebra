@@ -6,7 +6,7 @@ import numpy as np
 
 def rotate_image(file: str, degrees_clockwise: float):
 
-    image = Image.open('./Images/' + file + '.png')
+    image = Image.open('./static/images/' + file + '.png')
     image = image.convert('RGB')
     img = np.array(image)
 
